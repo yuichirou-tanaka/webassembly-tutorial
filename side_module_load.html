@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const importObject ={
+            env:{
+                __memory_base:0,
+            }
+        };
+
+        WebAssembly.instantiateStreaming(fetch("side_module.wasm"), importObject)
+        .then(result => {
+            const value = result.instance.exports.Increment(22);
+            console.log(value.toString());
+        })
+    </script>
+</body>
+</html>
