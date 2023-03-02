@@ -932,7 +932,7 @@ function createExportWrapper(name, fixedasm) {
 // include: runtime_exceptions.js
 // end include: runtime_exceptions.js
 var wasmBinaryFile;
-  wasmBinaryFile = 'html_template.wasm';
+  wasmBinaryFile = 'js_plumbin.wasm';
   if (!isDataURI(wasmBinaryFile)) {
     wasmBinaryFile = locateFile(wasmBinaryFile);
   }
